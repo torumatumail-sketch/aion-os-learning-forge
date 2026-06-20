@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="AION-OS Learning Forge: CSとプログラミング言語教育を、無料で、入口広く、陳腐にしないためのブラウザ学習サイト。"
+    />
+    <title>AION-OS Learning Forge</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="AION-OS Learning Forge home">
+        <span class="brand-mark">A</span>
+        <span>
+          <strong>AION-OS Learning Forge</strong>
+          <small>CS / Language / Systems</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#paths">学習路線</a>
+        <a href="#playground">Playground</a>
+        <a href="#operating-model">教育OS</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <canvas id="knowledgeCanvas" aria-label="AION knowledge graph visual"></canvas>
+        <div class="hero-content">
+          <p class="eyebrow">無料公開 / GitHub Pages ready / Browser playground</p>
+          <h1>教育DXを「動画置き場」で終わらせない。</h1>
+          <p class="lead">
+            CS教育、プログラミング言語、計算の考え方、設計判断をひとつの学習OSとして扱う。
+            初心者の入口は広く、内部構造は本物のまま、ブラウザ上で試して壊して直せる。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#playground">Playgroundを開く</a>
+            <a class="button secondary" href="#paths">学習路線を見る</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="AION learning contract">
+          <div class="metric">
+            <span>Price</span>
+            <strong>¥0</strong>
+          </div>
+          <div class="metric">
+            <span>Entry</span>
+            <strong>文理不問</strong>
+          </div>
+          <div class="metric">
+            <span>Core</span>
+            <strong>CS実行知</strong>
+          </div>
+          <div class="trace-line">
+            <span>E</span><span>O</span><span>T</span><span>C</span><span>G</span><span>X</span><span>RΩ</span><span>Σ</span><span>V</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="paths" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Learning paths</p>
+          <h2>入口を広げ、途中で薄くしない。</h2>
+        </div>
+        <div class="path-grid">
+          <article class="path-card" data-path="first">
+            <span class="card-index">01</span>
+            <h3>はじめての計算思考</h3>
+            <p>変数、条件分岐、反復を、暗記ではなく状態変化として読む。</p>
+            <ul>
+              <li>状態を観察する</li>
+              <li>処理を小さく分ける</li>
+              <li>失敗から仮説を直す</li>
+            </ul>
+          </article>
+          <article class="path-card" data-path="language">
+            <span class="card-index">02</span>
+            <h3>プログラミング言語の骨格</h3>
+            <p>構文、評価、型、スコープ、抽象化を、言語ごとの丸暗記から切り離す。</p>
+            <ul>
+              <li>式と文</li>
+              <li>束縛と参照</li>
+              <li>関数とデータ</li>
+            </ul>
+          </article>
+          <article class="path-card" data-path="systems">
+            <span class="card-index">03</span>
+            <h3>ブラウザから始めるシステム</h3>
+            <p>イベント、非同期、DOM、ネットワークを、画面の裏で動く仕組みとして扱う。</p>
+            <ul>
+              <li>イベントループ</li>
+              <li>非同期処理</li>
+              <li>UIと状態</li>
+            </ul>
+          </article>
+          <article class="path-card" data-path="design">
+            <span class="card-index">04</span>
+            <h3>作れる人の設計判断</h3>
+            <p>正解コードより、どこで分け、何を捨て、どう検証するかを鍛える。</p>
+            <ul>
+              <li>責務分離</li>
+              <li>検証と妥当性</li>
+              <li>再利用可能性</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="playground" class="playground-section">
+        <div class="section-head compact">
+          <p class="eyebrow">Browser Playground</p>
+          <h2>読んだ瞬間に、動かして確かめる。</h2>
+        </div>
+        <div class="playground-shell">
+          <aside class="lesson-rail" aria-label="Playground lessons">
+            <button class="lesson active" data-example="state">
+              <span>状態</span>
+              <strong>配列を変換する</strong>
+            </button>
+            <button class="lesson" data-example="language">
+              <span>言語</span>
+              <strong>関数を抽象化する</strong>
+            </button>
+            <button class="lesson" data-example="async">
+              <span>システム</span>
+              <strong>非同期を観察する</strong>
+            </button>
+          </aside>
+          <div class="editor-panel">
+            <div class="editor-toolbar">
+              <div>
+                <strong id="lessonTitle">状態を変換する</strong>
+                <span id="lessonGoal">偶数だけを2倍にして返す関数を完成させる</span>
+              </div>
+              <div class="toolbar-actions">
+                <button id="resetCode" class="icon-button" type="button" aria-label="Reset code" title="Reset">↺</button>
+                <button id="runCode" class="run-button" type="button">Run</button>
+              </div>
+            </div>
+            <textarea id="codeEditor" spellcheck="false" aria-label="JavaScript playground editor"></textarea>
+          </div>
+          <div class="output-panel">
+            <div class="output-head">
+              <strong>Result</strong>
+              <span id="runStatus">waiting</span>
+            </div>
+            <pre id="outputLog" aria-live="polite"></pre>
+            <div class="proof-strip">
+              <span>Σ verification</span>
+              <span>V validation</span>
+              <span>RΩ repair loop</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="operating-model" class="section operating">
+        <div class="section-head">
+          <p class="eyebrow">AION learning OS</p>
+          <h2>教材ではなく、再生成できる学習構造。</h2>
+        </div>
+        <div class="model-grid">
+          <article>
+            <span>E</span>
+            <h3>圧力を保存</h3>
+            <p>「初心者向け」「陳腐でない」「本当に動く」を飾りではなく設計条件として残す。</p>
+          </article>
+          <article>
+            <span>T</span>
+            <h3>完成条件から逆算</h3>
+            <p>最高の教材を名乗る前に、理解、操作、失敗復帰、再利用の条件へ分解する。</p>
+          </article>
+          <article>
+            <span>G</span>
+            <h3>生成器を埋め込む</h3>
+            <p>読むだけで終わらせず、課題、コード、検証、修復が同じ画面で回る。</p>
+          </article>
+          <article>
+            <span>V</span>
+            <h3>目的で妥当性確認</h3>
+            <p>テスト成功だけでなく、学習者が次の問題を自力で作れるかまで見る。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>AION-OS Learning Forge</span>
+      <span>Free, open, browser-native CS education.</span>
+    </footer>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
